@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block main %}
+<nav class="nav">
+    <a class="burger-menu" href="{% url 'index' %}"> HOME</a>
+</nav>
+<div class="container">
+    <section class="mb-4">
+        <div class="row m-5">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Categorias
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'galeria' %}">Todas as fotos</a>
+                        </li>
+                        {% for categoria in categorias %}
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'galeria' %}?categoria={{categoria.nome}}">{{categoria.nome}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    {% for foto in fotos %}
+                        <div class="col-md-4">
+                            <div class="card my-2">
+                                <img class="image-thumb"
+                                src="{{foto.imagem.url}}" 
+                                alt="">
+                                <div class="card-body">
+                                    <p class="card-text">{{foto.descricao}}</p>
+                                </div>
+                                <a href="{% url 'foto' foto.id %}" class="button btn btn-outline-dark btn-sm m-1">Ver</a>
+                            </div>
+                        </div>
+                    {% empty %}
+                    <h3>Sem fotos a serem exibidas</h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+{% endblock %}
