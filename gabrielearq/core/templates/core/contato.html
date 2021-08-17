@@ -1,103 +1,100 @@
 {% extends 'base.html' %}
 {% block main %}
+{% include 'parciais/messages.html' %}
+<section class="mb-4">
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Entre em Contato</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Se voce gostou de algum projeto você pode entrar em contato conosco para obter um orçamento.</p>
 
-<div class="container">
-  
-    {% include 'parciais/navbar.html' %}
-    <!--Section: Contact v.2-->
-    <section class="mb-4">
-    
-        <!--Section heading-->
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Entre em Contato</h2>
-        <!--Section description-->
-        <p class="text-center w-responsive mx-auto mb-5">Se voce gostou de algum projeto você pode entrar em contato conosco para obter um orçamento.</p>
-    
-        <div class="row">
-    
-            <!--Grid column-->
-            <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-    
-                    <!--Grid row-->
-                    <div class="row">
-    
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <label for="name" class="">Seu nome</label>
-                                <input type="text" id="name" name="name" class="form-control">
-                            </div>
-                        </div>
-                        <!--Grid column-->
-    
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <label for="email" class="">Seu email</label>
-                                <input type="text" id="email" name="email" class="form-control">
-                            </div>
-                        </div>
-                        <!--Grid column-->
-    
-                    </div>
-                    <!--Grid row-->
-    
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="md-form mb-0">
-                                <label for="subject" class="">Assunto</label>
-                                <input type="text" id="subject" name="subject" class="form-control">
-                            </div>
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" method="POST">
+                {% csrf_token %}
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="name" class="">Seu nome</label>
+                            <input type="text" id="name" name="nome" class="form-control">
                         </div>
                     </div>
-                    <!--Grid row-->
-    
-                    <!--Grid row-->
-                    <div class="row">
-    
-                        <!--Grid column-->
-                        <div class="col-md-12">
-    
-                            <div class="md-form">
-                                <label for="message">Sua mensagem</label>
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            </div>
-    
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="email" class="">Seu email</label>
+                            <input type="text" id="email" name="email" class="form-control">
                         </div>
                     </div>
-                    <!--Grid row-->
-    
-                </form>
-                <br>
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" >Enviar</a>
+                    <!--Grid column-->
+
                 </div>
-                <div class="status"></div>
-            </div>
-            <!--Grid column-->
-    
-            <!--Grid column-->
-            <div class="col-md-3 text-center">
-                <ul class="list-unstyled mb-0">
-                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                        <p>rua teste, 29. Vitória da conquista - BA</p>
-                    </li>
-    
-                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                        <p>(77) 9 123456789</p>
-                    </li>
-    
-                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                        <p>Email@email.com</p>
-                    </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-    
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="subject" class="">Assunto</label>
+                            <input type="text" id="subject" name="assunto" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <label for="message">Sua mensagem</label>
+                            <textarea type="text" id="message" name="mensagem" rows="2" class="form-control md-textarea"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <br>
+                <button class="btn col-md-12">
+                    <div class="text-center text-md-left">
+                        <a class="btn btn-primary" >Enviar</a>
+                    </div>
+                    <div class="status"></div>
+                </button>
+            </form>
+            <br>
         </div>
-    
-    </section>
-    <!--Section: Contact v.2-->
-</div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>rua teste, 29. Vitória da conquista - BA</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>(77) 9 123456789</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>Email@email.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
 {% endblock %}

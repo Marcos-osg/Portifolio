@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block main %}
-{% include 'parciais/navbar.html' %}
-
-<div class="container">
-    <h1 class="text-center">Gabriele Vieira</h1>
-    <h4 class="text-center">Arquitetura</h4>
+<div class=" px-3 text-center body">
+  <h1>Gabriele Vieira</h1>
+  <h5>Arquitetura</h5>
+  <p class="lead logo-h3">{% lorem 4p %}</p>
+  <br>
+  <p class="lead">
+    <a href="{% url 'galeria' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Galeria</a>
+  </p>
+  <br>  
 </div>
 {% endblock %}

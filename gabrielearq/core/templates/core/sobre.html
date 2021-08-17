@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="mb-4">
+    <div class="row m-5">
+        <div class="col-md-3">
+            <div class="card bg-d bg-dark">
+                <div class="card-header">
+                    <img class="image-thumb-sobre"
+                                src="https://medias.cnnbrasil.com.br/fotografia-do-brasileiro-victor-lima-esta-entre-as-25-melhores-fotos-do-ano.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/03/39216_132E09CF04A2E018.jpg&width=804&height=452&resize=CROP" 
+                                alt="">
+                    <h3>Gabriele Vieira</h3>
+                    <h6>Arquiteta</h6>
+                </div>
+            </div>
+        </div>
+        <div class=" row col-9 ">
+            <div class="card my-2 bg-dark">
+                <div class="card-header">
+                    <h1>Sobre mim</h1>
+                </div>
+                <div class="card-body">
+                    <p class="card-text text-center"> {% lorem 5 p%}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
